@@ -1,1 +1,1 @@
-{"version":2,"defects":[],"times":{"TaskModelTest::testNaoPodeSalvarTarefaSemTitulo":0.003}}
+{"version":2,"defects":[],"times":{"TaskModelTest::testNaoPodeSalvarTarefaSemTitulo":0.003,"TaskPresenterTest::testIndexFormataTitulosParaMaiusculo":0.001}}
