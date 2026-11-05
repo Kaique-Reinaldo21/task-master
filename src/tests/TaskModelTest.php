@@ -1,7 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../src/Model/Task.php';
+require_once __DIR__ . '/../model/task.php';
 
 class TaskModelTest extends TestCase {
     public function testNaoPodeSalvarTarefaSemTitulo() {

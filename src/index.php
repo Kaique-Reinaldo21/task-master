@@ -1,11 +1,14 @@
 <?php
 // Sistema de Autoloading Nativo (PSR-0 simplificado)
-spl_autoload_register(function ($class) {
-    $dirs = ['Model', 'Controller', 'View'];
+sspl_autoload_register(function ($class) {
+    $dirs = ['model', 'controller'];
+
     foreach ($dirs as $dir) {
-        $file = __DIR__ . "/src/$dir/$class.php";
+        $file = __DIR__ . "/src/$dir/" . lcfirst($class) . ".php";
+
         if (file_exists($file)) {
             require_once $file;
+            return;
         }
     }
 });
