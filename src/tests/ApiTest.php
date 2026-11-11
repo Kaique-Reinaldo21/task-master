@@ -1,15 +1,25 @@
+
 <?php
+
 use PHPUnit\Framework\TestCase;
 
-class ApiTest extends TestCase {
-    public function testApiRetornaListaEmJson() 
+class ApiTest extends TestCase
+{
+    public function testApiRetornaListaEmJson()
     {
-        // Simulamos uma requisição para a nossa nova api.php
-        $url = "http://localhost/api.php?action=list&quot;;
+        // Simula uma requisição à API
+        $url = "http://localhost:8000/api.php?action=list";
+
         $content = file_get_contents($url);
-       
-        // Verificamos se o que recebemos é um JSON válido
+
+        // Verifica se a requisição retornou conteúdo
+        $this->assertNotFalse($content);
+
+        // Converte a resposta JSON para um array PHP
         $data = json_decode($content, true);
+
+        // Verifica se o retorno é um array válido
         $this->assertIsArray($data);
+        $this->assertSame(JSON_ERROR_NONE, json_last_error());
     }
 }
